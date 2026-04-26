@@ -34,8 +34,8 @@ Open Swagger at `http://localhost:8000/docs`.
 - **Watchers**: `POST /api/issues/{issue_id}/watch`, `POST /api/issues/{issue_id}/unwatch`
 - **Activity**: `GET /api/projects/{project_id}/activity`
 - **Notifications**: `GET /api/notifications`
-- **Search**: `GET /api/search?q=...`
-- **WebSocket**: `GET /ws?project_id=...&token=...&since_activity_id=...`
+- **Search**: `GET /api/search?status=...&priority=...&assignee_id=...`
+- **WebSocket**: `GET /ws?project_id=...&since_activity_id=...`
 
 ## Demo users
 Seed script creates these users:
@@ -44,7 +44,10 @@ Seed script creates these users:
 - `bob@demo.com` / `Bob1234!`
 
 ## Authentication
-This prototype runs in **no-auth mode** for easier local demo. Endpoints assume the first seeded user is the acting user.\n+Run `python scripts/seed.py` before using the APIs.
+This prototype runs in **no-auth mode** for easier local demo. Endpoints assume the first seeded user is the acting user. Run `python -m scripts.seed` before using the APIs.
+
+## Demo Walkthrough
+For evaluator-friendly step-by-step demo instructions, request bodies, and websocket test flow, see [`DEMO.md`](DEMO.md).
 
 ## Migrations
 Generate a new migration after adding models:
